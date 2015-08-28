@@ -1676,7 +1676,7 @@ void ofAppEGLWindow::readNativeMouseEvents() {
 	int coordx;								   // the original code sets (0,4095) at upper left corner (4095,0) right down corner (0,0) right upper corner (x vertical y horizontal)
 	int coordy;								   // with ofClamp function gived strange results adding limits with that coordenates.
 	if(ev.code == ABS_X) {coordx=ev.value;
-		coordx = coordx - (-0.1222 * coordx + 255.39);
+		coordx = coordx - (-0.1222 * coordx + 255.39); //substraction error trend straight correction at y axis
 		mouseEvent.y = coordx * currentWindowRect.height/4095; //Changes coordenates as described, converts to window measures instead of evtest touch map units (4095x4095 in my case)
                 axisValuePending = true;
 		//cout << "MOUSEEVENT X " << mouseEvent.y <<   "\n";
@@ -1684,7 +1684,7 @@ void ofAppEGLWindow::readNativeMouseEvents() {
 		}
 	else if (ev.code == ABS_Y) {coordy=4095-ev.value;
 
-		coordy = coordy - (-0.1049 * coordy + 292.12);
+		coordy = coordy - (-0.1049 * coordy + 292.12); //substraction error trend straight correction at x axis
       		mouseEvent.x = coordy * currentWindowRect.width/4095;
                 
 				
