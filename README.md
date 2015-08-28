@@ -4,3 +4,6 @@ Modified original ofAppEGLWindow.cpp to adjust, scale and recognize touchscreen 
 To use it: replace and rename in /openFrameworks/libs/OpenFrameworks/apps as ofAppEGLWindow.cpp
 
 Made with PiTFT Plus 3.5", depending on the brand and model of TFT, little changes are required, search in code //MODIFIED
+
+
+Update (28/8/15): Added precision calibration
